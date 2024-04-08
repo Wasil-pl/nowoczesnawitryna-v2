@@ -1,0 +1,179 @@
+.header {
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-background-darker;
+    opacity: 65%;
+    border-radius: 20px;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    margin-left: 100px;
+  }
+
+  .navbar {
+    padding: 10px;
+    background-color: $color-background-dark;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .container-fluid {
+      z-index: 4;
+    }
+
+    .dropdown-menu {
+      background-color: $color-dark;
+      opacity: 90%;
+
+      .dropdown-item:hover {
+        background-color: unset;
+      }
+    }
+
+    .navbar-nav {
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      width: 110px;
+    }
+
+    .nav-item {
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba($color-dark, 0.5);
+      letter-spacing: 2px;
+      margin-right: 5px;
+
+      a {
+        color: $color-light;
+        font-size: 1.2rem;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+
+        &:hover {
+          color: $color-primary;
+        }
+
+        svg {
+          width: 25px;
+          height: auto;
+          fill: $color-light;
+
+          &:hover {
+            fill: $color-primary;
+          }
+        }
+
+        .main-svg {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+
+  .header-content {
+    position: absolute;
+    bottom: -25%;
+    transform: translateY(-50%);
+    min-height: 400px;
+
+    .header-title h1 {
+      font-size: 1.5rem;
+      color: $color-primary;
+      font-family: $font-title;
+    }
+
+    .header-description h2 {
+      font-size: 4rem;
+      color: $color-light;
+      font-family: $font-title;
+      font-weight: $font-semibold;
+
+      &:nth-of-type(2) {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .header {
+    .navbar {
+      .navbar-brand img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.99px) {
+  .header {
+    .navbar-expand-lg .navbar-collapse {
+      margin-left: 0;
+    }
+    .navbar {
+      .navbar-nav {
+        align-items: flex-start;
+      }
+
+      .nav-item {
+        a {
+          text-align: start;
+        }
+      }
+
+      .dropdown-menu {
+        background-color: unset;
+        opacity: 100%;
+      }
+
+      .navbar-collapse {
+        position: relative;
+        padding: 0 20px;
+        z-index: 1;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: $color-dark;
+          border-radius: 5px;
+          opacity: 90%;
+        }
+
+        & > ul {
+          z-index: 2;
+          position: relative;
+        }
+      }
+    }
+  }
+}
