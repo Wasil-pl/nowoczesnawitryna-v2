@@ -10,6 +10,16 @@ const app = {
     thisApp.contactForm = new ContactForm();
   },
 
+  initVideo: function () {
+    const video = document.getElementById("myVideo");
+
+    if (!video) {
+      return;
+    }
+
+    video.play();
+  },
+
   initTypewriter: function () {
     const thisApp = this;
 
@@ -35,6 +45,7 @@ const app = {
     const thisApp = this;
 
     thisApp.initContactForm();
+    thisApp.initVideo();
     thisApp.initTypewriter();
     thisApp.initScroll();
   },
